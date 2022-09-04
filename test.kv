@@ -1,5 +1,55 @@
 #:import get_color_from_hex kivy.utils.get_color_from_hex
 #:import Gradient kivy_gradient.Gradient
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+#:import Factory kivy.factory.Factory
+
+<Setting@Popup>
+
+    auto_dismiss: True
+    size_hint: 0.6, 0.6
+    pos_hint: {"x": 0.2, "top": 0.8}
+
+    canvas:
+        Color:
+            rgb: (255/255, 170/255, 235/255)
+        Line:
+            width: 47
+            rectangle: self.x, self.y, self.width, self.height
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: (255/255, 170/255, 235/255)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+            Line:
+                width: 2
+                rectangle: self.x, self.y, self.width, self.height
+
+        Button:
+            size_hint: (.8, .3)
+            pos_hint: {"x":.1, "y":.625}
+            background_normal: ''
+            background_color: 1, .5, .6, .85
+            font_size: 60
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+            text: "Fullscreen"
+            on_release: root.dismiss()
+            on_release: app.fullscreen()
+
+        Button:
+            size_hint: (.8, .3)
+            pos_hint: {"x":.1, "y":.2}
+            background_normal: ''
+            background_color: 1, .5, .6, .85
+            font_size: 42
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+            text: "Turn off fullscreen"
+            on_release: root.dismiss()
+            on_release: app.notfullscreen()
 
 <FirstScreen>:
     canvas:
@@ -15,18 +65,34 @@
                 get_color_from_hex("2962FF")
                 )
 
+    Button:
+        size_hint: (.2025, .0765)
+        pos_hint: {"x":.8885, "y":.9235}
+        background_normal: ''
+        background_color: 200/255, 0, 70/255
+
     Image:
         size_hint: (1, 1)
         pos_hint: {"x": 0, "y": 0}
         source: 'images/floating_heart_zip.zip'
-        #source: 'images/heart_float.gif'
         allow_stretch: True
         keep_ratio: False
+        anim_delay: 0.05
+
+    Image:
+        size_hint: (1, 2)
+        pos_hint: {"x": 0, "y": 0}
+        source: 'images/heartside.gif'
+        allow_stretch: True
+        keep_ratio: False
+        anim_delay: 0.07
+
+
 
     Image:
         size_hint: (.274, .7)
         pos_hint: {"x": .666, "y": .08}
-        source: 'images/Obama.jpg'
+        source: 'images/betterobama.png'
         allow_stretch: False
         keep_ratio: False
 
@@ -51,7 +117,6 @@
         background_color: 200/255, 0, 70/255
 
     Button:
-        id: obama_text
         size_hint: (.274, .2)
         pos_hint: {"x":.067, "y":.049}
         background_normal: ''
@@ -98,7 +163,7 @@
         font_name: 'Micross'
 
     Button:
-        size_hint: (.285, .2)
+        size_hint: (.4, .2)
         pos_hint: {"x":-0.001, "y":0.8}
         background_normal: ''
         background_color: 255/255, 6/255, 0/255, 1
@@ -109,7 +174,7 @@
 
     Button:
         size_hint: (.8, .2)
-        pos_hint: {"x":.28, "y":0.8}
+        pos_hint: {"x":.394, "y":0.8}
         background_normal: ''
         background_color: 1, .3, .4, 1
         font_size: 50
@@ -119,17 +184,29 @@
 
     Image:
         source: 'images/dating_sim_grad.png'
-        size_hint: (1, 1)
-        pos_hint: {"x": 0.1, "y": 0.4}
-        allow_stretch: False
+        size_hint: (.5, .15)
+        pos_hint: {"x": 0.4, "y": 0.82}
+        allow_stretch: True
         keep_ratio: False
 
     Image:
         source: 'images/CandL.png'
-        size_hint: (0.98, 0.98)
-        pos_hint: {"x": -0.35, "y": 0.42}
-        allow_stretch: False
+        size_hint: (0.4, 0.2)
+        pos_hint: {"x": -0.001, "y": 0.8}
+        allow_stretch: True
         keep_ratio: False
+
+    Button:
+        size_hint: (.11, .075)
+        pos_hint: {"x":.89, "y":.925}
+        background_normal: ''
+        background_color: 1, .5, .6, .85
+        font_size: 22
+        bold: True
+        text: "Settings"
+        color: 200/255, 0/250, 70/255, 1
+        on_release: Factory.Setting().open()
+
 
 
 <SecondScreen>:
@@ -140,7 +217,8 @@
             pos_hint: {"center_x": .5, "center_y": .5}
             size_hint: .2, .2
             on_release: root.manager.current = "third"
-            on_release: app.text_wait("burger")
+            on_release: app.text_wait("sending this", "buttonfortext", "second")
+
 
 <ThirdScreen>:
     FloatLayout:
@@ -148,7 +226,10 @@
             text: "WHAT"
             size_hint: .3, .1
             pos_hint: {"x": .3, "y": .5}
-            on_release: root.manager.current = "fourth"
+            on_release:
+                root.transition = FadeTransition();
+                root.manager.current = "fourth"
+
 
 <FourthScreen>:
     FloatLayout:
@@ -157,4 +238,5 @@
             size_hint: .3, .1
             pos_hint: {"x": .3, "y": .5}
             on_release: root.manager.current = "first"
+            on_release: root.manager.transition = FadeTransition()
 
