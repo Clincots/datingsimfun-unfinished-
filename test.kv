@@ -2,6 +2,14 @@
 #:import Gradient kivy_gradient.Gradient
 #:import FadeTransition kivy.uix.screenmanager.FadeTransition
 #:import Factory kivy.factory.Factory
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+#:import PixelTransition kivy.garden.moretransitions.PixelTransition
+#:import BlurTransition kivy.garden.moretransitions.BlurTransition
+#:import RVBTransition kivy.garden.moretransitions.RVBTransition
+#:import RippleTransition kivy.garden.moretransitions.RippleTransition
+
+
+
 
 <Setting@Popup>
 
@@ -126,6 +134,7 @@
         color: 200/255, 0/255, 70/255, 1
         text: "Nyabyssal"
         on_release: root.manager.current = "second"
+        on_release: root.manager.transition = FadeTransition()
         font_name: 'Micross'
 
     Button:
@@ -214,29 +223,3937 @@
         Button:
             id: buttonfortext
             text: "Go to third"
-            pos_hint: {"center_x": .5, "center_y": .5}
-            size_hint: .2, .2
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.transition = NoTransition()
             on_release: root.manager.current = "third"
-            on_release: app.text_wait("sending this", "buttonfortext", "second")
 
+            disabled: True
+
+        Button: #right
+            id: idforb
+            text: "text here"
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "third"
+            on_release: root.manager.transition = FadeTransition()
+            #on_release: app.text_wait("text test", "idforuser", "second")
+
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "fourth"
+
+        Image:
+            source: 'images/genshinbg1.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n Hiya, I'm Nyabyssal! I'm a nice, charismatic girl who loves playing games. \n It's nice to meet you, Anon! ^.^"
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+
+        Label:
+            id: idforuser
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Nice to meet you too!"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Aren't you Hu Tao from Genshi-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<winner>:
+    Button:
+        text: "winner"
+
+<loer>:
+    Button:
+        text: "loer"
 
 <ThirdScreen>:
-    FloatLayout:
-        Button:
-            text: "WHAT"
-            size_hint: .3, .1
-            pos_hint: {"x": .3, "y": .5}
-            on_release:
-                root.transition = FadeTransition();
-                root.manager.current = "fourth"
+    Button:
+        pos_hint: {"x": 0, "y": 0}
+        size_hint: 1, .2
+        on_release: root.manager.current = "fifth"
+        on_release: root.manager.transition = FadeTransition()
+
+    Image:
+        source: 'images/angrygenshinbg.jpg'
+        size_hint: 1,0.8
+        pos_hint: {"x": 0, "y": 0.2}
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "\n\n\n SHUT UP I AM NYABYSSAL, THE GOD OF ROGUE LINEAGE!! I DO NOT WANT TO \n BE ASSOCIATED WITH GENSHIN TRASH!!! OH MY GOD I will literally send you to \n purgatory (I am rank 1 deep knight)"
+            font_size: 20
+            center: self.parent.center
+            color: 1, 0, .3, 1
+            font_name: 'Micross'
+    Label:
+        text: "Nyabyssal"
+        bold: True
+        font_size: 20
+        pos_hint: {"x": -0.4, "y": -0.29}
+        color: 200/255, 0/255, 70/255, 1
+        font_name: 'Micross'
+    Image:
+        source: 'images/hutao.png'
+        pos_hint: {"x": 0.25, "y": 0.25}
+        size_hint: .7, .7
+        allow_stretch: False
+        keep_ratio: False
+    Image:
+        source: 'images/angery.png'
+        size_hint: 0.05, 0.05
+        pos_hint: {"x": 0.595, "y": 0.845}
+        allow_stretch: False
+        keep_ratio: False
 
 
 <FourthScreen>:
+    Button:
+
+        text: "Go to third"
+        pos_hint: {"x": 0, "y": 0}
+        size_hint: 1, .2
+        on_release: root.manager.current = "fifth"
+    Image:
+        source: 'images/genshinbg1.jpg'
+        size_hint: 1,0.8
+        pos_hint: {"x": 0, "y": 0.2}
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+    Label:
+        text: "Nyabyssal"
+        bold: True
+        font_size: 20
+        pos_hint: {"x": -0.4, "y": -0.29}
+        color: 200/255, 0/255, 70/255, 1
+        font_name: 'Micross'
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "wait you weren't supposed to pick this (i am not done making it)"
+            font_size: 20
+            center: self.parent.center
+            color: 1, 0, .3, 1
+            font_name: 'Micross'
+
+    Image:
+        source: 'images/hutao.png'
+        pos_hint: {"x": 0.25, "y": 0.25}
+        size_hint: .7, .7
+        allow_stretch: False
+        keep_ratio: False
+<Five>:
+
+    Button:
+        text: "Go to third"
+        pos_hint: {"x": 0, "y": 0}
+        size_hint: 1, .2
+        on_release: root.manager.current = "sixth"
+        disabled: True
+    Button: #right
+        pos_hint: {"x": 0.59, "y": 0.01}
+        size_hint: .35, .1
+        on_release: root.manager.current = "seventh"
+        on_release: root.manager.transition = PixelTransition(duration = 1.5 )
+    Button: #left
+        pos_hint: {"x": 0.09, "y": 0.01}
+        size_hint: .35, .1
+        on_release: root.manager.current = "sixth"
+    Image:
+        source: 'images/genshinbg1.jpg'
+        size_hint: 1,0.8
+        pos_hint: {"x": 0, "y": 0.2}
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "\n\nGonna be honest here, this relationship isn't going to work out. Though if you want, I \ncan introduce you to Enimul. She'a also a Genshin fan like you.."
+            font_size: 20
+            center: self.parent.center
+            color: 1, 0, .3, 1
+            font_name: 'Micross'
+    Label:
+        text: "Nyabyssal"
+        bold: True
+        font_size: 20
+        pos_hint: {"x": -0.4, "y": -0.29}
+        color: 200/255, 0/255, 70/255, 1
+        font_name: 'Micross'
+    Image:
+        source: 'images/hutao.png'
+        pos_hint: {"x": 0.25, "y": 0.25}
+        size_hint: .7, .7
+        allow_stretch: False
+        keep_ratio: False
+
+    Image:
+        source: 'images/responsebox.png'
+        pos_hint: {"x": 0.09, "y": 0.01}
+        size_hint: .35, .08
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "Let me talk to her instead, \nyou're kinda cringe."
+            font_sze: 15
+            center: self.parent.center
+            color: 0, 0, 0, 1
+            font_name: 'Micross'
+    Image:
+        source: 'images/responsebox.png'
+        pos_hint: {"x": 0.59, "y": 0.01}
+        size_hint: .35, .08
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "No, I hate women."
+            font_size: 15
+            center: self.parent.center
+            color: 0, 0, 0, 1
+            font_name: 'Micross'
+<Six>:
+
+    Button: #middle
+        pos_hint: {"x": 0.34, "y": 0.01}
+        size_hint: .35, .1
+        on_release: root.manager.current = "eighth"
+    Image:
+        source: 'images/genshinbg1.jpg'
+        size_hint: 1,0.8
+        pos_hint: {"x": 0, "y": 0.2}
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "\n\nYou're missing out on your one and only chance to become friends with the cool \n and epic Nyabyssal but sure I guess lets gooooooooo *snaps fingers epically*"
+            font_size: 20
+            center: self.parent.center
+            color: 1, 0, .3, 1
+            font_name: 'Micross'
+    Label:
+        text: "Nyabyssal"
+        bold: True
+        font_size: 20
+        pos_hint: {"x": -0.4, "y": -0.29}
+        color: 200/255, 0/255, 70/255, 1
+        font_name: 'Micross'
+
+    Image:
+        source: 'images/hutao.png'
+        pos_hint: {"x": 0.25, "y": 0.25}
+        size_hint: .7, .7
+        allow_stretch: False
+        keep_ratio: False
+    Image:
+        source: 'images/responsebox.png'
+        pos_hint: {"x": 0.34, "y": 0.01}
+        size_hint: .35, .08
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "You're so cringe wtf this isn't an anime "
+            font_size: 15
+            center: self.parent.center
+            color: 0, 0, 0, 1
+            font_name: 'Micross'
+
+<Seven>:
     FloatLayout:
         Button:
-            text: "magic!"
-            size_hint: .3, .1
-            pos_hint: {"x": .3, "y": .5}
-            on_release: root.manager.current = "first"
+
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "crash"
+            on_release: app.Crash()
+        Image:
+            source: 'images/angery.png'
+            size_hint: 0.05, 0.05
+            pos_hint: {"x": 0.595, "y": 0.845}
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/angrygenshinbg.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nWhy are you even playing a dating\nsim then GET OUT!!"
+                font_size: 45
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/angery.png'
+            size_hint: 0.05, 0.05
+            pos_hint: {"x": 0.595, "y": 0.845}
+            allow_stretch: False
+            keep_ratio: False
+
+<Eight>:
+
+    Button: #middle
+        id: middlebuttoneight
+        pos_hint: {"x": 0.34, "y": 0.01}
+        size_hint: .35, .1
+        #on_release: root.manager.current = "ninth"
+        on_release: root.manager.transition = BlurTransition(duration = 1 )
+
+        on_release: root.gowhite()
+        on_release: root.manager.transition = BlurTransition(duration = 1 )
+
+    Image:
+        source: 'images/genshinbg1.jpg'
+        size_hint: 1,0.8
+        pos_hint: {"x": 0, "y": 0.2}
+        allow_stretch: True
+        keep_ratio: False
+    Image:
+        pos_hint: {"x": .225, "y": -.31}
+        source: 'images/actualgaterogue.png'
+        allow_stretch: False
+        keep_ratio: False
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "\n\nYou're missing out on your one and only chance to become friends with the cool \n and epic Nyabyssal but sure I guess lets gooooooooo *snaps fingers epically*"
+            font_size: 20
+            center: self.parent.center
+            color: 1, 0, .3, 1
+            font_name: 'Micross'
+    Label:
+        text: "Nyabyssal"
+        bold: True
+        font_size: 20
+        pos_hint: {"x": -0.4, "y": -0.29}
+        color: 200/255, 0/255, 70/255, 1
+        font_name: 'Micross'
+
+    Image:
+        source: 'images/hutao.png'
+        pos_hint: {"x": 0.25, "y": 0.25}
+        size_hint: .7, .7
+        allow_stretch: False
+        keep_ratio: False
+    Image:
+        source: 'images/responsebox.png'
+        pos_hint: {"x": 0.34, "y": 0.01}
+        size_hint: .35, .08
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "WHAT HOW DID THAT JUST APPEAR??"
+            font_size: 14
+            center: self.parent.center
+            color: 0, 0, 0, 1
+            font_name: 'Micross'
+
+<Nine>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
             on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "tenth"
+            on_release: root.manager.transition = FadeTransition()
+        Image:
+            source: 'images/genshinluminabg.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.238}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nWe're here! This is the Nantianmen. Eminul likes frequenting here, it's a place where \nshe can relax in peace. She's over there, let's walk over."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Okay, let's go."
+                font_size: 13
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+
+<Ten>:
+    FloatLayout:
+        Button:
+
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "eleventh"
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nEnimul, this is Anon. Anon, this is Enimul. Say hi to each other."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+<Eleven>:
+    FloatLayout:
+        Button: #rihgt
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.giveelevenaffinity()
+            on_release: root.manager.current = "twelfth"
+
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "thirteenth"
+
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nH-hi Anon, I'm Enimul. It's nice to meet you. I hope we can be good friends. \nIt's my first time meeting a stranger so suddenly, but I hope we can be good friends."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Hi, it's nice to meet you too. I'm Anon."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Omg are you cosplaying a Genshin \ncharacter? Are you also a Genshin fan?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<Twelve>:
+    FloatLayout:
+        Button:
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "thirteenth"
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\n\n Y-yeah, she's one of my favorite characters. I'm a pretty big Genshin fan. \n I also happen to spend a lot of money on it, but I just love Genshin that much.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            size_hint: .045, .05
+            pos_hint: {"x": .3375, "y": .83}
+            source: 'images/blush.png'
+            allow_stretch: False
+            keep_ratio: False
+
+
+<Thirteen>:
+    FloatLayout:
+        Button: #rihgt
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            #on_release: root.manager.current = "fourteenth"
+            on_release: root.funny()
+
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            #on_release: root.manager.current = "fourteenth"
+            on_release: root.funny()
+
+
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            id: whitecircle1
+            source: 'images/whitecircle.png'
+            pos_hint: {"x": 0.1, "y": -1.5}
+            allow_stretch: True
+            keep_ratio: True
+            opacity: 0
+
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<Fourteen>:
+    FloatLayout:
+        Button: #right
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a57"
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a54"
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nUmm, where would you like to go now, Anon?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Let's go to a cafe maybe? "
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "uhhhhhhhhhhhhhhhhh your house?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<Fifteen>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .1, .1
+            pos_hint: {"x": 0.55, "y": 0.675}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<Sixteen>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+            opacity: 0
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            pos_hint: {"x": 0.25, "y": 0.3}
+            allow_stretch: True
+            keep_ratio: True
+            opacity: 0
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a17>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .15, .15
+            pos_hint: {"x": 0.525, "y": 0.65}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a18>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .2, .2
+            pos_hint: {"x": 0.5, "y": 0.625}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a19>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .25, .25
+            pos_hint: {"x": 0.475, "y": 0.6}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a20>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .3, .3
+            pos_hint: {"x": 0.45, "y": 0.575}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a21>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .35, .35
+            pos_hint: {"x": 0.425, "y": 0.55}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a22>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .4, .4
+            pos_hint: {"x": 0.4, "y": 0.525}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a23>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .45, .45
+            pos_hint: {"x": 0.375, "y": 0.5}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a24>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .5, .5
+            pos_hint: {"x": 0.35, "y": 0.475}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a25>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .55, .55
+            pos_hint: {"x": 0.325, "y": 0.45}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a26>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .6, .6
+            pos_hint: {"x": 0.3, "y": 0.425}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a27>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .65, .65
+            pos_hint: {"x": 0.275, "y": 0.4}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a28>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .7, .7
+            pos_hint: {"x": 0.25, "y": 0.375}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a29>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .75, .75
+            pos_hint: {"x": 0.225, "y": 0.35}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a30>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .8, .8
+            pos_hint: {"x": 0.2, "y": 0.325}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a31>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .85, .85
+            pos_hint: {"x": 0.175, "y": 0.3}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a32>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .9, .9
+            pos_hint: {"x": 0.15, "y": 0.275}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a33>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .95, .95
+            pos_hint: {"x": 0.125, "y": 0.25}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a34>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            pos_hint: {"x": .225, "y": -.31}
+            source: 'images/actualgaterogue.png'
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/hutao.png'
+            pos_hint: {"x": 0.25, "y": 0.25}
+            size_hint: .7, .7
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: 1, 1
+            pos_hint: {"x": 0.1, "y": 0.225}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a35>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .95, .95
+            pos_hint: {"x": 0.125, "y": 0.25}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a36>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .9, .9
+            pos_hint: {"x": 0.15, "y": 0.275}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a37>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .85, .85
+            pos_hint: {"x": 0.175, "y": 0.3}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a38>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .8, .8
+            pos_hint: {"x": 0.2, "y": 0.325}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a39>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .75, .75
+            pos_hint: {"x": 0.225, "y": 0.35}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a40>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a41>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .65, .65
+            pos_hint: {"x": 0.275, "y": 0.4}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a42>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .6, .6
+            pos_hint: {"x": 0.3, "y": 0.425}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a43>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .55, .55
+            pos_hint: {"x": 0.325, "y": 0.45}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a44>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .5, .5
+            pos_hint: {"x": 0.35, "y": 0.475}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a45>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .45, .45
+            pos_hint: {"x": 0.375, "y": 0.5}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a46>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .4, .4
+            pos_hint: {"x": 0.4, "y": 0.525}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a47>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .35, .35
+            pos_hint: {"x": 0.425, "y": 0.55}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a48>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .3, .3
+            pos_hint: {"x": 0.45, "y": 0.575}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a49>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .25, .25
+            pos_hint: {"x": 0.475, "y": 0.6}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a50>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .2, .2
+            pos_hint: {"x": 0.5, "y": 0.625}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a51>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .15, .15
+            pos_hint: {"x": 0.525, "y": 0.65}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a52>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .1, .1
+            pos_hint: {"x": 0.55, "y": 0.675}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a53>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .05, .05
+            pos_hint: {"x": 0.575, "y": 0.7}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a56>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+
+        Image:
+            source: 'images/whitecircle.png'
+            size_hint: .025, .025
+            pos_hint: {"x": 0.5875  , "y": 0.7125}
+            allow_stretch: True
+            keep_ratio: True
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWell, you guys seem to be getting along. I'm gonna go now, have \nfun with your vi- I mean uhh friend."
+                font_size: 20
+                center: self.parent.center
+                color: 1, 0, .3, 1
+                font_name: 'Micross'
+        Label:
+            text: "Nyabyssal"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 200/255, 0/255, 70/255, 1,
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "See ya later shtinky."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Wait, what?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a55>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.funy2()
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nO-oh, um, okay. Let me take us there."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+<a54>:
+    FloatLayout:
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nSure, I have one in mind. Let me take us there."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a57>:
+    FloatLayout:
+        Button: #right
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+            on_release: root.afficheckyes()
+
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a54"
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nA-are you sure? My house is very messy, and umm..."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Nevermind, let's go to a cafe."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Yes, I'm sure."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a58>:
+
+<a59>:
+    FloatLayout:
+        Button: #right
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.check()
+            on_release: root.manager.current = "a55"
+            on_release: root.manager.transition = FadeTransition()
+
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "a54"
+            on_release: root.manager.transition = FadeTransition()
+
+        Image:
+            source: 'images/genshinbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nR-really? I-I'm kind of scared about having you over here... are you certain?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/lumine.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Oh, alright then. Let's go to a cafe."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Yes, I'm 100% sure."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a60>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "a61"
+            on_release: root.manager.transition = FadeTransition()
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nO-okay, we’re here! S-sorry, let me turn on the lamp."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Yeah, I can’t see a thing. \nPlease turn on the lights."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a61>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nI-I'm sorry, Anon, but I need more money... your body parts will sell for a lot..."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Yeah, I can’t see a thing. \nPlease turn on the lights."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+
+
+
+<blackscreen>:
+
+<whitescreen>:
+    Image:
+        source: 'images/whitecircle.png'
+        size_hint: 2, 2
+        pos_hint: {"x": -.5, "y": -0.5}
+        allow_stretch: True
+        keep_ratio: True
 
