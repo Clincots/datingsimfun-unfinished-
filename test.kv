@@ -4079,7 +4079,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\nO-okay, we’re here! S-sorry, let me turn on the lamp."
+                text: "\nO-okay, we’re here! S-sorry, let me turn on the lights."
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -4109,8 +4109,22 @@
         Button: #middle
             pos_hint: {"x": 0.34, "y": 0.01}
             size_hint: .35, .1
+            on_release: root.manager.transition = RVBTransition()
             on_release: root.manager.current = "a62"
+            on_release: root.manager.transition = RVBTransition()
 
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": 0, "y": 0.25}
+            size_hint: .71, .71
+            allow_stretch: False
+            keep_ratio: False
         Image:
             source: 'images/textbox.png'
             pos_hint: {"x": -.1, "y": -.1}
@@ -4138,14 +4152,763 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "Yeah, I can’t see a thing. \nPlease turn on the lights."
+                text: "W-wait, hold up a minu-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a62>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -0.23, "y": 0.13}
+            size_hint: 1.023, 1.023
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
                 font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
 
+<a63>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -0.46, "y": 0.01}
+            size_hint: 1.336, 1.336
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
 
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
 
+<a64>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -0.69, "y": -0.11}
+            size_hint: 1.649, 1.649
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a65>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -0.92, "y": -0.23}
+            size_hint: 1.962, 1.962
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a66>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -1.15, "y": -0.35}
+            size_hint: 2.275, 2.275
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a67>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -1.28, "y": -0.47}
+            size_hint: 2.588, 2.588
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a68>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -1.51, "y": -0.59}
+            size_hint: 2.901, 2.901
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a69>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -1.74, "y": -0.71}
+            size_hint: 3.214, 3.214
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a70>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -1.97, "y": -0.83}
+            size_hint: 3.527, 3.527
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a71>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -2.2, "y": -0.95}
+            size_hint: 3.84, 3.84
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a72>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -2.43, "y": -1.07}
+            size_hint: 4.153, 4.153
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a73>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -2.66, "y": -1.19}
+            size_hint: 4.466, 4.466
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a74>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -2.89, "y": -1.31}
+            size_hint: 4.779, 4.779
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a75>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -3.12, "y": -1.43}
+            size_hint: 5.092, 5.092
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+<a76>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a62"
+        Image:
+            source: 'images/genshinimpactroom.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/actualscaryluminecrop.png'
+            pos_hint: {"x": -3.45, "y": -1.55}
+            size_hint: 5.41, 5.41
+            allow_stretch: False
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "We can talk about this WAIT PLEA-"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
 
 <blackscreen>:
 
