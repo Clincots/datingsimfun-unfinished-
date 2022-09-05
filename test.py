@@ -335,9 +335,9 @@ class a54(Screen):
 
 class a55(Screen):
     def funy2(self, *args):
-        Clock.schedule_once(self.next3, .5)
-        Clock.schedule_once(self.next4, 1)
-        Clock.schedule_once(self.next5, 1.5)
+        Clock.schedule_once(self.next3, .0001)
+        Clock.schedule_once(self.next4, .5)
+        Clock.schedule_once(self.next5, 1)
 
 
     def next3(self, dt):
@@ -380,7 +380,63 @@ class a61(Screen):
     pass
 
 class a62(Screen):
-    pass
+    def on_enter(self, *args):
+        Clock.schedule_once(self.next3, .025)
+        Clock.schedule_once(self.next4, .05)
+        Clock.schedule_once(self.next5, .075)
+        Clock.schedule_once(self.next6, .1)
+        Clock.schedule_once(self.next7, .125)
+        Clock.schedule_once(self.next8, .15)
+        Clock.schedule_once(self.next9, .175)
+        Clock.schedule_once(self.next10, .2)
+        Clock.schedule_once(self.next11, .225)
+        Clock.schedule_once(self.next12, .25)
+        Clock.schedule_once(self.next13, .275)
+        Clock.schedule_once(self.next14, .3)
+        Clock.schedule_once(self.next15, .325)
+        Clock.schedule_once(self.next16, .35)
+        Clock.schedule_once(self.next17, .375)
+
+
+
+    def next3(self, dt):
+        # blur here
+        self.manager.current = "a63"
+        # blur here
+
+    def next4(self, dt):
+        self.manager.current = "a64"
+
+    def next5(self, dt):
+        self.manager.current = "a65"
+
+    def next6(self, dt):
+        self.manager.current = "a66"
+
+    def next7(self, dt):
+        self.manager.current = "a67"
+
+    def next8(self, dt):
+        self.manager.current = "a68"
+    def next9(self, dt):
+        self.manager.current = "a69"
+    def next10(self, dt):
+        self.manager.current = "a70"
+    def next11(self, dt):
+        self.manager.current = "a71"
+    def next12(self, dt):
+        self.manager.current = "a72"
+    def next13(self, dt):
+        self.manager.current = "a73"
+    def next14(self, dt):
+        self.manager.current = "a74"
+    def next15(self, dt):
+        self.manager.current = "a75"
+    def next16(self, dt):
+        self.manager.current = "a76"
+    def next17(self, dt):
+        print(crash)
+
 
 class a63(Screen):
     pass
