@@ -9,6 +9,8 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import FadeTransition
 from kivy.clock import Clock
 from kivy.animation import Animation
+from kivy.core.audio import SoundLoader
+from playsound import playsound
 
 Config.set('input', 'mouse', 'mouse,multitouch_on_demand')
 
@@ -71,6 +73,7 @@ class Eleven(Screen):
     def giveelevenaffinity(self):
         global affinity
         affinity += 10
+        print(affinity)
 
 class Twelve(Screen):
     pass
@@ -331,13 +334,21 @@ class a53(Screen):
     pass
 
 class a54(Screen):
-    pass
+    def gowhite(self, *args):
+        Clock.schedule_once(self.next3, .00001)
+        Clock.schedule_once(self.next4, .5)
+
+    def next3(self, dt):
+        self.manager.current = "whitescreen"
+
+    def next4(self, dt):
+        self.manager.current = "a77"
 
 class a55(Screen):
     def funy2(self, *args):
         Clock.schedule_once(self.next3, .0001)
         Clock.schedule_once(self.next4, .5)
-        Clock.schedule_once(self.next5, 1)
+        Clock.schedule_once(self.next5, 2)
 
 
     def next3(self, dt):
@@ -361,10 +372,14 @@ class a57(Screen):
         if affinity >= 60:
             self.manager.transition = FadeTransition()
             self.manager.current = "a59"
+            affinity-= 10
+            print(affinity)
             self.manager.transition = FadeTransition()
 
         else:
             self.manager.current = "a55"
+            affinity -= 10
+            print(affinity)
 
 class a58(Screen):
     pass
@@ -381,29 +396,60 @@ class a61(Screen):
 
 class a62(Screen):
     def on_enter(self, *args):
-        Clock.schedule_once(self.next3, .025)
-        Clock.schedule_once(self.next4, .05)
-        Clock.schedule_once(self.next5, .075)
-        Clock.schedule_once(self.next6, .1)
-        Clock.schedule_once(self.next7, .125)
-        Clock.schedule_once(self.next8, .15)
-        Clock.schedule_once(self.next9, .175)
-        Clock.schedule_once(self.next10, .2)
-        Clock.schedule_once(self.next11, .225)
-        Clock.schedule_once(self.next12, .25)
-        Clock.schedule_once(self.next13, .275)
-        Clock.schedule_once(self.next14, .3)
-        Clock.schedule_once(self.next15, .325)
-        Clock.schedule_once(self.next16, .35)
-        Clock.schedule_once(self.next17, .375)
-
-
+        Clock.schedule_once(self.next3, .05)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.play_sound, .01)
+        Clock.schedule_once(self.next4, .12)
+        Clock.schedule_once(self.next5, .19)
+        Clock.schedule_once(self.next6, .26)
+        Clock.schedule_once(self.next7, .33)
+        Clock.schedule_once(self.next8, .40)
+        Clock.schedule_once(self.next9, .47)
+        Clock.schedule_once(self.next10, .54)
+        Clock.schedule_once(self.next11, .61)
+        Clock.schedule_once(self.next12, .68)
+        Clock.schedule_once(self.next13, .75)
+        Clock.schedule_once(self.next14, .82)
+        Clock.schedule_once(self.next15, .89)
+        Clock.schedule_once(self.next16, .96)
+        Clock.schedule_once(self.crashthegame, 1.0)
 
     def next3(self, dt):
         # blur here
         self.manager.current = "a63"
         # blur here
-
+    def play_sound(self, dt):
+        sound = SoundLoader.load('sound/luminehyaa_Trim.mp3')
+        print("yup playing sound hahahahan funy1")
+        sound.volume = 0.1
+        sound.play()
+        print("yup playing sound hahahahan funy")
     def next4(self, dt):
         self.manager.current = "a64"
 
@@ -434,7 +480,7 @@ class a62(Screen):
         self.manager.current = "a75"
     def next16(self, dt):
         self.manager.current = "a76"
-    def next17(self, dt):
+    def crashthegame(self, dt):
         print(crash)
 
 
@@ -481,31 +527,147 @@ class a76(Screen):
     pass
 
 class a77(Screen):
-    pass
+    def plus10affinity(self):
+        global affinity
+        affinity += 10
+        print(affinity)
+
+    def minus5affinity(self):
+        global affinity
+        affinity -= 5
+        print(affinity)
+
+    def plus3affinity(self):
+        global affinity
+        affinity += 3
+        print(affinity)
 
 class a78(Screen):
-    pass
+    def minus15affinity(self):
+        global affinity
+        affinity -= 15
+        print(affinity)
+
+    def minus3affinity(self):
+        global affinity
+        affinity -= 3
+        print(affinity)
+
+    def plus10affinity(self):
+        global affinity
+        affinity += 10
+        print(affinity)
+
 
 class a79(Screen):
-    pass
+    def minus15affinity(self):
+        global affinity
+        affinity -= 15
+        print(affinity)
+
+    def minus3affinity(self):
+        global affinity
+        affinity -= 3
+        print(affinity)
+
+    def plus10affinity(self):
+        global affinity
+        affinity += 10
+        print(affinity)
 
 class a80(Screen):
-    pass
+    def plus15affinity(self):
+        global affinity
+        affinity += 10
+        print(affinity)
+
+    def minus10affinity(self):
+        global affinity
+        affinity -= 10
+        print(affinity)
 
 class a81(Screen):
-    pass
+
+    def plus6affinity(self):
+        global affinity
+        affinity += 6
+        print(affinity)
+    def afficheck(self):
+        global affinity
+        if affinity >= 75:
+            Clock.schedule_once(self.next3, .0005)
+            affinity -= 25
+            print(affinity)
+        else:
+            Clock.schedule_once(self.next4, .0005)
+    def next3(self, dt):
+        self.manager.current = "a84"
+    def next4(self, dt):
+        self.manager.current = "a85"
+
 
 class a82(Screen):
-    pass
+    def plus6affinity(self):
+        global affinity
+        affinity += 6
+        print(affinity)
+    def afficheck(self):
+        global affinity
+        if affinity >= 75:
+            Clock.schedule_once(self.next3, .0005)
+            affinity -= 25
+            print(affinity)
+        else:
+            Clock.schedule_once(self.next4, .0005)
+    def next3(self, dt):
+        self.manager.current = "a87"
+    def next4(self, dt):
+        self.manager.current = "a88"
+
+
 
 class a83(Screen):
-    pass
+    def plus6affinity(self):
+        global affinity
+        affinity += 6
+        print(affinity)
+    def afficheck(self):
+        global affinity
+        if affinity >= 75:
+            Clock.schedule_once(self.next3, .0005)
+            affinity -= 25
+            print(affinity)
+        else:
+            Clock.schedule_once(self.next4, .0005)
+    def next3(self, dt):
+        self.manager.current = "a91"
+    def next4(self, dt):
+        self.manager.current = "a92"
+
 
 class a84(Screen):
     pass
 
 class a85(Screen):
-    pass
+    def gowhite(self, *args):
+        Clock.schedule_once(self.next3, .00002)
+        Clock.schedule_once(self.next3, .5)
+        Clock.schedule_once(self.next4, 1)
+        Clock.schedule_once(self.next5, 2.5)
+
+    def next3(self, dt):
+        # blur here
+        self.manager.current = "blackscreen"
+        # blur here
+
+    def next4(self, dt):
+        self.manager.current = "a58"
+
+    def next5(self, dt):
+        self.manager.current = "a60"
+
+    def next3(self, dt):
+        self.manager.current = "whitescreen"
 
 class a86(Screen):
     pass
@@ -514,8 +676,25 @@ class a87(Screen):
     pass
 
 class a88(Screen):
-    pass
+    def gowhite(self, *args):
+        Clock.schedule_once(self.next3, .00002)
+        Clock.schedule_once(self.next3, .5)
+        Clock.schedule_once(self.next4, 1)
+        Clock.schedule_once(self.next5, 2.5)
 
+    def next3(self, dt):
+        # blur here
+        self.manager.current = "blackscreen"
+        # blur here
+
+    def next4(self, dt):
+        self.manager.current = "a58"
+
+    def next5(self, dt):
+        self.manager.current = "a60"
+
+    def next3(self, dt):
+        self.manager.current = "whitescreen"
 class a89(Screen):
     pass
 class a90(Screen):
@@ -523,7 +702,25 @@ class a90(Screen):
 class a91(Screen):
     pass
 class a92(Screen):
-    pass
+    def gowhite(self, *args):
+        Clock.schedule_once(self.next3, .00002)
+        Clock.schedule_once(self.next3, .5)
+        Clock.schedule_once(self.next4, 1)
+        Clock.schedule_once(self.next5, 2.5)
+
+    def next3(self, dt):
+        # blur here
+        self.manager.current = "blackscreen"
+        # blur here
+
+    def next4(self, dt):
+        self.manager.current = "a58"
+
+    def next5(self, dt):
+        self.manager.current = "a60"
+
+    def next3(self, dt):
+        self.manager.current = "whitescreen"
 class a93(Screen):
     pass
 class a94(Screen):
@@ -721,6 +918,12 @@ class a189(Screen):
 
 
 class CandLApp(App):
+
+    def play_sound(self):
+        sound = SoundLoader.load('sound/luminehyaa_Trim.mp3')
+        sound.volume = 1
+        sound.play()
+        print("playing sound456")
 
     def build(self):
         sm = ScreenManager()
@@ -943,6 +1146,11 @@ class CandLApp(App):
         Window.fullscreen = False
 
 
+
+    def test1(self):
+        print("test1")
+    def test2(self):
+        print("test2")
 
 
 
