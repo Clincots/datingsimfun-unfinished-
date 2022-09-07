@@ -10,7 +10,6 @@
 
 
 
-
 <Setting@Popup>
 
     auto_dismiss: True
@@ -58,6 +57,101 @@
             text: "Turn off fullscreen"
             on_release: root.dismiss()
             on_release: app.notfullscreen()
+<Question@Popup>
+
+    auto_dismiss: True
+    size_hint: 0.6, 0.6
+    pos_hint: {"x": 0.2, "top": 0.8}
+
+    canvas:
+        Color:
+            rgb: (255/255, 170/255, 235/255)
+        Line:
+            width: 47
+            rectangle: self.x, self.y, self.width, self.height
+
+    FloatLayout:
+        canvas:
+            Color:
+                rgb: (255/255, 170/255, 235/255)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+            Line:
+                width: 2
+                rectangle: self.x, self.y, self.width, self.height
+
+        Label:
+            pos_hint: {"x": -0.0, "top": 1.45}
+            background_color: 1, 0, 0, 1
+            text: "MADE BY ALEX ZHOU (CLINCOT)!"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": 1.35}
+            background_color: 1, 0, 0, 1
+            text: "There are multiple endings to"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": 1.25}
+            background_color: 1, 0, 0, 1
+            text: "each path. If your game closes,"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": 1.15}
+            background_color: 1, 0, 0, 1
+            text: "that means you either died or"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": 1.05}
+            background_color: 1, 0, 0, 1
+            text: "you reached an ending. Each"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": .95}
+            background_color: 1, 0, 0, 1
+            text: "action you do affects your "
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": .85}
+            background_color: 1, 0, 0, 1
+            text: "affinity, which decides what"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": .75}
+            background_color: 1, 0, 0, 1
+            text: "the dialogue, path, and ending"
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
+
+        Label:
+            pos_hint: {"x": -0.0, "top": .68}
+            background_color: 1, 0, 0, 1
+            text: "you get."
+            font_size: 25
+            bold: True
+            color: 200/255, 0/255, 70/255, 1
 
 <FirstScreen>:
     canvas:
@@ -204,7 +298,11 @@
         pos_hint: {"x": -0.001, "y": 0.8}
         allow_stretch: True
         keep_ratio: False
-
+    Button:
+        size_hint: (.074, .08)
+        pos_hint: {"x":.9285, "y":.847}
+        background_normal: ''
+        background_color: 200/255, 0, 70/255
     Button:
         size_hint: (.11, .075)
         pos_hint: {"x":.89, "y":.925}
@@ -215,7 +313,16 @@
         text: "Settings"
         color: 200/255, 0/250, 70/255, 1
         on_release: Factory.Setting().open()
-
+    Button:
+        size_hint: (.07, .075)
+        pos_hint: {"x":.93, "y":.8485}
+        background_normal: ''
+        background_color: 1, .5, .6, .85
+        font_size: 50
+        bold: True
+        text: "?"
+        color: 200/255, 0/250, 70/255, 1
+        on_release: Factory.Question().open()
 
 
 <SecondScreen>:
@@ -242,7 +349,7 @@
         Button: #left
             pos_hint: {"x": 0.09, "y": 0.01}
             size_hint: .35, .1
-            on_release: root.manager.current = "fourth"
+            on_release: root.manager.current = "a77"
 
         Image:
             source: 'images/genshinbg1.jpg'
@@ -419,6 +526,7 @@
         pos_hint: {"x": 0.09, "y": 0.01}
         size_hint: .35, .1
         on_release: root.manager.current = "sixth"
+
     Image:
         source: 'images/genshinbg1.jpg'
         size_hint: 1,0.8
@@ -458,8 +566,8 @@
         allow_stretch: True
         keep_ratio: False
         Label:
-            text: "Let me talk to her instead, \nyou're kinda cringe."
-            font_sze: 15
+            text: "Uhh, okay then. Let me \ntalk to her instead."
+            font_size: 15
             center: self.parent.center
             color: 0, 0, 0, 1
             font_name: 'Micross'
@@ -520,7 +628,7 @@
         allow_stretch: True
         keep_ratio: False
         Label:
-            text: "You're so cringe wtf this isn't an anime "
+            text: "You're so cringe, this isn't an anime."
             font_size: 15
             center: self.parent.center
             color: 0, 0, 0, 1
@@ -693,7 +801,7 @@
             keep_ratio: False
             Label:
                 text: "Okay, let's go."
-                font_size: 13
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -771,7 +879,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\n\nH-hi Anon, I'm Enimul. It's nice to meet you. I hope we can be good friends. \nIt's my first time meeting a stranger so suddenly, but I hope we can be good friends."
+                text: "\n\nO-oh, hey Nyabyssal. Is this the person you were talking about? Hi Anon, I'm Enimul. \nIt's nice to meet you, I hope we can be good friends."
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -803,7 +911,7 @@
             keep_ratio: False
             Label:
                 text: "Hi, it's nice to meet you too. I'm Anon."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -949,7 +1057,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1016,7 +1124,7 @@
             keep_ratio: False
             Label:
                 text: "Let's go to a cafe maybe? "
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1027,7 +1135,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "uhhhhhhhhhhhhhhhhh your house?"
+                text: "Uhhhhhhhhhhhhhhhhh your house? ;)"
                 font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
@@ -1092,7 +1200,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1161,7 +1269,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1236,7 +1344,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1311,7 +1419,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1386,7 +1494,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1461,7 +1569,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1536,7 +1644,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1611,7 +1719,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1686,7 +1794,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1761,7 +1869,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1836,7 +1944,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1911,7 +2019,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -1987,7 +2095,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2062,7 +2170,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2138,7 +2246,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2213,7 +2321,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2288,7 +2396,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2363,7 +2471,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2438,7 +2546,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2513,7 +2621,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2578,7 +2686,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2644,7 +2752,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2710,7 +2818,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2775,7 +2883,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2840,7 +2948,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2899,7 +3007,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -2965,7 +3073,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3031,7 +3139,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3097,7 +3205,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3163,7 +3271,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3229,7 +3337,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3295,7 +3403,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3361,7 +3469,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3427,7 +3535,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3492,7 +3600,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3558,7 +3666,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3623,7 +3731,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3689,7 +3797,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3755,7 +3863,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3821,7 +3929,7 @@
             keep_ratio: False
             Label:
                 text: "See ya later shtinky."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -3840,9 +3948,9 @@
 
 <a55>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
+        Button:
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
             on_release: root.funy2()
             on_release: root.manager.transition = BlurTransition(duration = 1 )
 
@@ -3882,6 +3990,14 @@
 
 <a54>:
     FloatLayout:
+
+        Button:
+            pos_hint: {"x":0, "y":0}
+            size_hint: 1, .2
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+            on_release: root.gowhite()
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+
         Image:
             source: 'images/genshinbg2.png'
             size_hint: 1,0.8
@@ -3972,7 +4088,7 @@
             keep_ratio: False
             Label:
                 text: "Nevermind, let's go to a cafe."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -4046,7 +4162,7 @@
             keep_ratio: False
             Label:
                 text: "Oh, alright then. Let's go to a cafe."
-                font_sze: 15
+                font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
@@ -4079,7 +4195,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\nO-okay, we’re here! S-sorry, let me turn on the lights."
+                text: "\nOkay, we’re here! S-sorry, let me open the curtains."
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -4099,7 +4215,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "Yeah, I can’t see a thing. \nPlease turn on the lights."
+                text: "Yeah, it's very dark. \nPlease open the curtains."
                 font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
@@ -4109,9 +4225,11 @@
         Button: #middle
             pos_hint: {"x": 0.34, "y": 0.01}
             size_hint: .35, .1
-            on_release: root.manager.transition = RVBTransition()
+            on_release: root.manager.transition = RVBTransition(duration=0.05)
             on_release: root.manager.current = "a62"
-            on_release: root.manager.transition = RVBTransition()
+            on_release: root.manager.transition = RVBTransition(duration=0.05)
+            #on_release: app.play_sound()
+
 
         Image:
             source: 'images/genshinimpactroom.jpg'
@@ -4132,7 +4250,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\nI-I'm sorry, Anon, but I need more money... your body parts will sell for a lot..."
+                text: "\nI-I'm sorry, Anon, but I need more money... and I've been ordered to kill you.."
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -4152,7 +4270,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "W-wait, hold up a minu-"
+                text: "W-wait, what? Hold up a minu-"
                 font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
@@ -4210,10 +4328,7 @@
 
 <a63>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4261,10 +4376,7 @@
 
 <a64>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4311,10 +4423,7 @@
                 font_name: 'Micross'
 <a65>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4361,10 +4470,7 @@
                 font_name: 'Micross'
 <a66>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4411,10 +4517,7 @@
                 font_name: 'Micross'
 <a67>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4461,10 +4564,7 @@
                 font_name: 'Micross'
 <a68>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4511,10 +4611,7 @@
                 font_name: 'Micross'
 <a69>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4561,10 +4658,7 @@
                 font_name: 'Micross'
 <a70>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4611,10 +4705,7 @@
                 font_name: 'Micross'
 <a71>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4661,10 +4752,7 @@
                 font_name: 'Micross'
 <a72>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4711,10 +4799,7 @@
                 font_name: 'Micross'
 <a73>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
             source: 'images/genshinimpactroom.jpg'
             size_hint: 1,0.8
@@ -4761,21 +4846,18 @@
                 font_name: 'Micross'
 <a74>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
-            source: 'images/genshinimpactroom.jpg'
+            source: 'images/genshinimpactroomdedge.png'
             size_hint: 1,0.8
             pos_hint: {"x": 0, "y": 0.2}
             allow_stretch: True
             keep_ratio: False
         Image:
-            source: 'images/actualscaryluminecrop.png'
-            pos_hint: {"x": -2.89, "y": -1.31}
-            size_hint: 4.779, 4.779
-            allow_stretch: False
+            source: 'images/actualscaryluminecropdedge.png'
+            pos_hint: {"x": -2.8, "y": -1.23}
+            size_hint: 4.2, 4.2
+            allow_stretch: True
             keep_ratio: False
         Image:
             source: 'images/textbox.png'
@@ -4811,21 +4893,18 @@
                 font_name: 'Micross'
 <a75>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
+
         Image:
-            source: 'images/genshinimpactroom.jpg'
+            source: 'images/genshinimpactroomdedge.png'
             size_hint: 1,0.8
             pos_hint: {"x": 0, "y": 0.2}
             allow_stretch: True
             keep_ratio: False
         Image:
-            source: 'images/actualscaryluminecrop.png'
-            pos_hint: {"x": -3.12, "y": -1.43}
-            size_hint: 5.092, 5.092
-            allow_stretch: False
+            source: 'images/actualscaryluminecropdedge.png'
+            pos_hint: {"x": -3.7, "y": -2.13}
+            size_hint: 6, 6
+            allow_stretch: True
             keep_ratio: False
         Image:
             source: 'images/textbox.png'
@@ -4861,34 +4940,8 @@
                 font_name: 'Micross'
 <a76>:
     FloatLayout:
-        Button: #middle
-            pos_hint: {"x": 0.34, "y": 0.01}
-            size_hint: .35, .1
-            on_release: root.manager.current = "a62"
-        Image:
-            source: 'images/genshinimpactroom.jpg'
-            size_hint: 1,0.8
-            pos_hint: {"x": 0, "y": 0.2}
-            allow_stretch: True
-            keep_ratio: False
-        Image:
-            source: 'images/actualscaryluminecrop.png'
-            pos_hint: {"x": -3.45, "y": -1.55}
-            size_hint: 5.41, 5.41
-            allow_stretch: False
-            keep_ratio: False
-        Image:
-            source: 'images/textbox.png'
-            pos_hint: {"x": -.1, "y": -.1}
-            size_hint: 1.25, .55
-            allow_stretch: True
-            keep_ratio: False
-            Label:
-                text: "\nGoodbye Anon!!!! I'm sorry about this!!!"
-                font_size: 20
-                center: self.parent.center
-                color: 255/255, 230/255, 140/205, 1
-                font_name: 'Micross'
+
+
         Label:
             text: "Enimul"
             bold: True
@@ -4909,6 +4962,805 @@
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
+
+<a77>:
+    FloatLayout:
+        Button: #left, +10
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus10affinity()
+            on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "a78"
+            on_release: root.manager.transition = FadeTransition()
+        Button: #middlemaybe +3
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus3affinity()
+            on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "a79"
+            on_release: root.manager.transition = FadeTransition()
+        Button: #right, -5
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.minus5affinity()
+            on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "a80"
+            on_release: root.manager.transition = FadeTransition()
+
+        Image:
+            source: 'images/cafemaybe2.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nW-we're here! This is my favorite cafe in this area. D-do you want some drinks?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Sure, can I get a Tart Brilliance?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Sure, can I get an Athenaeum?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Uhh, I don't like drinking. "
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a78>:
+    FloatLayout:
+
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.minus3affinity()
+            on_release: root.manager.current = "a83"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus10affinity()
+            on_release: root.manager.current = "a83"
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.minus15affinity()
+            on_release: root.manager.current = "a83"
+
+        Image:
+            source: 'images/betterluminecafeturned.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nO-oh, that's a good choice. I also really like that. U-um, waiter, can we get a \nTart Brilliance and a Brightcrown?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks for ordering for me. I don't really \nlike talking to random people, even waiters."
+                font_size: 11.2
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks for ordering for me. I'm \nreally shy about things like this."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks for ordering for me. I'm \nbroke and have no money."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a79>:
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.minus3affinity()
+            on_release: root.manager.current = "a82"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus10affinity()
+            on_release: root.manager.current = "a82"
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.minus15affinity()
+            on_release: root.manager.current = "a82"
+
+        Image:
+            source: 'images/betterluminecafeturned.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nO-oh, okay. U-um, waiter, can we get an Athenaeum and a Brightcrown?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks for ordering for me. I don't really \nlike talking to random people, even waiters."
+                font_size: 11.2
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks for ordering for me. I'm \nreally shy about things like this."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks for ordering for me. I'm \nbroke and have no money."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a80>:
+    FloatLayout:
+
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.manager.current = "a81"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.minus10affinity()
+            on_release: root.manager.current = "a81"
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus15affinity()
+            on_release: root.manager.current = "a81"
+
+        Image:
+            source: 'images/betterluminecafeturned.jpg'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nO-oh. Umm, okay. Uhm... I'll just take a Brightcrown for myself then. U-um, waiter, \ncan I get a Brightcrown?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Thanks, I really don't like drinking. \nI'm allergic to water."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Oh, sorry about that. I probably should've \n ordered something to make it not awkward..."
+                font_size: 11
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a81>: #no thing
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus6affinity()
+            on_release: root.manager.current = "a86"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.afficheck()
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus6affinity()
+            on_release: root.manager.current = "a86"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nO-oh, no worries. Um... I don't really know what to do now. What do you want to \ntalk about?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What do you like to do?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Let's go back to your house. "
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "I want to know more about you."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a82>: #coffe
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus6affinity()
+            on_release: root.manager.current = "a89"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.afficheck()
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus6affinity()
+            on_release: root.manager.current = "a89"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nO-oh, no worries. Here's your Athenaeum. Um... I don't really know what to do now.\nWhat do you want to talk about?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What do you like to do?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Let's go back to your house. "
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "I want to know more about you."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a83>: #good one (tart)
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus6affinity()
+            on_release: root.manager.current = "a90"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.afficheck()
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: root.plus6affinity()
+            on_release: root.manager.current = "a90"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nO-oh, no worries. Here's your Tart Brilliance. Um... I don't really know what to do now.\nWhat do you want to talk about?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What do you like to do?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Let's go back to your house. "
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "I want to know more about you."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a84>: #nothing, affinity > 75
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a86"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nU-um, I don't know about that... Oh, I know! How about we talk about our interests?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a85>: #nothing, affinity < 75
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+            on_release: root.gowhite()
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nOh. What a shame... I wanted to stay here a bit longer. Let's teleport there then. "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a87>: #coffee, affinity > 75
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a89"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nU-um, I don't know about that... Oh, I know! How about we talk about our interests?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a88>: #coffe, affinity < 75
+
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+            on_release: root.gowhite()
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nOh. What a shame... I wanted to stay here a bit longer. Let's teleport there then. "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a91>: #tart, affi > 75
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a90"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nU-um, I don't know about that... Oh, I know! How about we talk about our interests?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a92>: #tart, affi < 75
+
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+            on_release: root.gowhite()
+            on_release: root.manager.transition = BlurTransition(duration = 1 )
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nOh. What a shame... I wanted to stay here a bit longer. Let's teleport there then. "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a89>: #coffe, more about her. Interests
+<a86>: #nothing, more about her. Interests
+<a90>: #tart, more about her. interests
+
 
 <blackscreen>:
 
