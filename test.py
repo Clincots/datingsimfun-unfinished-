@@ -730,7 +730,16 @@ class a95(Screen):
 class a96(Screen):
     pass
 class a97(Screen):
-    pass
+
+    def gowhiteaftercafe(self):
+        Clock.schedule_once(self.next3aftercafe, .00001)
+        Clock.schedule_once(self.next4aftercafe, .5)
+
+    def next3aftercafe(self, dt):
+        self.manager.current = "whitescreen"
+
+    def next4aftercafe(self, dt):
+        self.manager.current = "a98"
 class a98(Screen):
     pass
 class a99(Screen):
@@ -740,7 +749,15 @@ class a100(Screen):
 class a101(Screen):
     pass
 class a102(Screen):
-    pass
+    def gowhiteaftercafe(self):
+        Clock.schedule_once(self.next3aftercafe, .00001)
+        Clock.schedule_once(self.next4aftercafe, .5)
+
+    def next3aftercafe(self, dt):
+        self.manager.current = "whitescreen"
+
+    def next4aftercafe(self, dt):
+        self.manager.current = "a98"
 class a103(Screen):
     pass
 class a104(Screen):
@@ -750,7 +767,15 @@ class a105(Screen):
 class a106(Screen):
     pass
 class a107(Screen):
-    pass
+    def gowhiteaftercafe(self):
+        Clock.schedule_once(self.next3aftercafe, .00001)
+        Clock.schedule_once(self.next4aftercafe, .5)
+
+    def next3aftercafe(self, dt):
+        self.manager.current = "whitescreen"
+
+    def next4aftercafe(self, dt):
+        self.manager.current = "a98"
 class a108(Screen):
     pass
 class a109(Screen):
@@ -1145,6 +1170,53 @@ class CandLApp(App):
     def notfullscreen(self):
         Window.fullscreen = False
 
+    def minus3affinity(self):
+        global affinity
+        affinity -= 3
+        print(affinity)
+
+    def minus5affinity(self):
+        global affinity
+        affinity -= 5
+        print(affinity)
+
+    def minus6affinity(self):
+        global affinity
+        affinity -= 6
+        print(affinity)
+
+    def minus10affinity(self):
+        global affinity
+        affinity -= 10
+        print(affinity)
+
+    def minus15affinity(self):
+        global affinity
+        affinity -= 15
+        print(affinity)
+
+    def plus3affinity(self):
+        global affinity
+        affinity += 3
+        print(affinity)
+    def plus5affinity(self):
+        global affinity
+        affinity += 5
+        print(affinity)
+
+    def plus6affinity(self):
+        global affinity
+        affinity += 6
+        print(affinity)
+
+    def plus10affinity(self):
+        global affinity
+        affinity += 10
+        print(affinity)
+    def plus15affinity(self):
+        global affinity
+        affinity += 15
+        print(affinity)
 
 
     def test1(self):
