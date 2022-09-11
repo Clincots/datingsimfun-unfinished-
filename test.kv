@@ -4968,21 +4968,21 @@
         Button: #left, +10
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus10affinity()
+            on_release: app.plus10affinity()
             on_release: root.manager.transition = FadeTransition()
             on_release: root.manager.current = "a78"
             on_release: root.manager.transition = FadeTransition()
         Button: #middlemaybe +3
             pos_hint: {"x": 0.35, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus3affinity()
+            on_release: app.plus3affinity()
             on_release: root.manager.transition = FadeTransition()
             on_release: root.manager.current = "a79"
             on_release: root.manager.transition = FadeTransition()
         Button: #right, -5
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.minus5affinity()
+            on_release: app.minus5affinity()
             on_release: root.manager.transition = FadeTransition()
             on_release: root.manager.current = "a80"
             on_release: root.manager.transition = FadeTransition()
@@ -5037,7 +5037,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "Uhh, I don't like drinking. "
+                text: "Uhh, I don't like drinks. "
                 font_size: 15
                 center: self.parent.center
                 color: 0, 0, 0, 1
@@ -5056,17 +5056,17 @@
         Button: #left
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.minus3affinity()
+            on_release: app.minus3affinity()
             on_release: root.manager.current = "a83"
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus10affinity()
+            on_release: app.plus10affinity()
             on_release: root.manager.current = "a83"
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.minus15affinity()
+            on_release: app.minus15affinity()
             on_release: root.manager.current = "a83"
 
         Image:
@@ -5136,17 +5136,17 @@
         Button: #left
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.minus3affinity()
+            on_release: app.minus3affinity()
             on_release: root.manager.current = "a82"
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus10affinity()
+            on_release: app.plus10affinity()
             on_release: root.manager.current = "a82"
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.minus15affinity()
+            on_release: app.minus15affinity()
             on_release: root.manager.current = "a82"
 
         Image:
@@ -5221,12 +5221,12 @@
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.minus10affinity()
+            on_release: app.minus10affinity()
             on_release: root.manager.current = "a81"
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus15affinity()
+            on_release: app.plus15affinity()
             on_release: root.manager.current = "a81"
 
         Image:
@@ -5297,7 +5297,7 @@
         Button: #left
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus6affinity()
+            on_release: app.plus6affinity()
             on_release: root.manager.current = "a86"
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
@@ -5306,7 +5306,7 @@
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus6affinity()
+            on_release: app.plus6affinity()
             on_release: root.manager.current = "a86"
 
         Image:
@@ -5323,7 +5323,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\nO-oh, no worries. Um... I don't really know what to do now. What do you want to \ntalk about?"
+                text: "\n\nO-oh, no worries. Um... I don't really know what to do now. What do you want to \ntalk about?"
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -5376,7 +5376,7 @@
         Button: #left
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus6affinity()
+            on_release: app.plus6affinity()
             on_release: root.manager.current = "a89"
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
@@ -5385,7 +5385,7 @@
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus6affinity()
+            on_release: app.plus6affinity()
             on_release: root.manager.current = "a89"
 
         Image:
@@ -5402,7 +5402,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\nO-oh, no worries. Here's your Athenaeum. Um... I don't really know what to do now.\nWhat do you want to talk about?"
+                text: "\n\nO-oh, no worries. Here's your Athenaeum. Um... I don't really know what to do now.\nWhat do you want to talk about?"
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -5455,8 +5455,8 @@
         Button: #left
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus6affinity()
-            on_release: root.manager.current = "a90"
+            on_release: app.plus6affinity()
+            on_release: root.manager.current = "a93"
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
             size_hint: .3, .08
@@ -5464,8 +5464,8 @@
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
-            on_release: root.plus6affinity()
-            on_release: root.manager.current = "a90"
+            on_release: app.plus6affinity()
+            on_release: root.manager.current = "a93"
 
         Image:
             source: 'images/tartbrilliance.png'
@@ -5481,7 +5481,7 @@
             allow_stretch: True
             keep_ratio: False
             Label:
-                text: "\nO-oh, no worries. Here's your Tart Brilliance. Um... I don't really know what to do now.\nWhat do you want to talk about?"
+                text: "\n\nO-oh, no worries. Here's your Tart Brilliance. Um... I don't really know what to do now.\nWhat do you want to talk about?"
                 font_size: 20
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
@@ -5757,9 +5757,2304 @@
             pos_hint: {"x": -0.4, "y": -0.29}
             color: 189/255, 183/255, 107/255, 1
             font_name: 'Micross'
+
+
+
 <a89>: #coffe, more about her. Interests
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus3affinity()
+            on_release: root.manager.current = "a104"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus5affinity()
+            on_release: root.manager.current = "a105"
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus5affinity()
+            on_release: root.manager.current = "a106"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nU-um... I like Genshin, ducks, reading, and.... um... "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Genshin?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Ducks?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
 <a86>: #nothing, more about her. Interests
-<a90>: #tart, more about her. interests
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus3affinity()
+            on_release: root.manager.current = "a99"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus5affinity()
+            on_release: root.manager.current = "a100"
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus5affinity()
+            on_release: root.manager.current = "a101"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nU-um... I like Genshin, ducks, reading, and.... um... "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Genshin?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Ducks?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a93>: #tart, more about her. interests
+    FloatLayout:
+        Button: #left
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus3affinity()
+            on_release: root.manager.current = "a94"
+        Button: #middlemaybe
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus5affinity()
+            on_release: root.manager.current = "a95"
+        Button: #right
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            on_release: app.plus5affinity()
+            on_release: root.manager.current = "a96"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nU-um... I like Genshin, ducks, reading, and.... um... "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.033, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Genshin?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.35, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Ducks?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.667, "y": 0.01}
+            size_hint: .3, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a94>: #genshint tart
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a128"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, you've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about ducks and reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+
+<a128>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a129"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, I like ducks. I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a129>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a130"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a130>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a131"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nAs for reading, I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a131>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a97"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+
+
+<a95>: #ducks tart
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a114"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, I like ducks. I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a114>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a132"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about Genshin and reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a132>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a133"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYou've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a133>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a134"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nAs for reading, I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a134>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a97"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+<a96>: # reaidng tart
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a112"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nYeah, I like reading. I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a112>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a135"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about Genshin and ducks?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+
+<a135>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a136"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, you've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a136>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a137"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nAs for ducks, I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a137>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a97"
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+<a97>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.gowhiteaftercafe()
+
+        Image:
+            source: 'images/tartbrilliance.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nIt's getting kind of late. Let me show you one of my favorite spots. \nMaybe we can watch the stars together."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Sure, let's go."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a99>: #genshint nothing
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a138"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, you've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about ducks and reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a138>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a139"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, I like ducks. I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a139>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a140"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+
+
+
+
+<a140>: # reaidng nothing
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a141"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nAs for reading, I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a141>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a102"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+
+
+
+<a100>: #ducks nothing
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a115"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, I like ducks. I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a115>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a143"
+
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about Genshin and reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a143>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a144"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, you've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a144>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a145"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nAs for reading, I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a145>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a102"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+
+<a101>: # reaidng nothing
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a113"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nYeah, I like reading. I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a113>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a146"
+
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about Genshin and ducks?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a146>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a147"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, you've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a147>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a148"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nAs for ducks, I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a148>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a102"
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+
+
+
+<a102>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.gowhiteaftercafe()
+
+        Image:
+            source: 'images/nothingcafe.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nIt's getting kind of late. Let me show you one of my favorite spots. \nMaybe we can watch the stars together."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Sure, let's go."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a104>: #genshint cofe
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a118"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, you've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about ducks and reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a118>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a119"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, I like ducks. I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a119>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a120"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a120>: # reaidng cofe
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a121"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nAs for reading, I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a121>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a107"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a105>: #ducks cofe
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a116"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYeah, I like ducks. I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a116>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a122"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about Genshin and reading?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a122>:
+
+    Button:
+        text: "Go to third"
+        pos_hint: {"x": 0, "y": 0}
+        size_hint: 1, .2
+        on_release: root.manager.current = "a123"
+
+    Image:
+        source: 'images/athenaeum.png'
+        size_hint: 1,0.8
+        pos_hint: {"x": 0, "y": 0.2}
+        allow_stretch: True
+        keep_ratio: False
+
+    Image:
+        source: 'images/textbox.png'
+        pos_hint: {"x": -.1, "y": -.1}
+        size_hint: 1.25, .55
+        allow_stretch: True
+        keep_ratio: False
+        Label:
+            text: "\n\nYou've seen my Genshin cosplay. I'm a big fan of the characters... \nI really like all the character interactions. I find them really interesting."
+            font_size: 20
+            center: self.parent.center
+            color: 255/255, 230/255, 140/205, 1
+            font_name: 'Micross'
+
+    Label:
+        text: "Enimul"
+        bold: True
+        font_size: 20
+        pos_hint: {"x": -0.4, "y": -0.29}
+        color: 189/255, 183/255, 107/255, 1
+        font_name: 'Micross'
+
+<a123>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a124"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nAs for reading, I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a124>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a107"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a106>: # reaidng cofe
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a111"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: '\n\nYeah, I like reading. I really enjoy reading fantasy light novels. My favorites are \n"Reborn as a Vending Machine" and "Reincarnated as a Sword".'
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+<a111>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a125"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nFor me, reading is a way to just let out my stress. It takes my mind off things and \nkind of calms me down. You should try reading if you haven't read in a while."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "What about Genshin and ducks?"
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+
+<a125>:
+    FloatLayout:
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a126"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nYou've seen my Genshin cosplay. I'm a big fan of it... \nI really like all the character interactions. I find them really interesting."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a126>:
+
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a127"
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nAs for ducks, I've been a fan of them ever since I was young. It's \nkind of an arbitrary thing, I don't really have any reasoning behind it.."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a127>:
+    FloatLayout:
+
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a107"
+
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nI like all animals in general. I feel like they're easier to be around with \nthan other humans. It might seem weird, but that's just how I feel."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+
+
+<a107>:
+    FloatLayout:
+
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.gowhiteaftercafe()
+
+        Image:
+            source: 'images/athenaeum.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\nIt's getting kind of late. Let me show you one of my favorite spots. \nMaybe we can watch the stars together."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Sure, let's go."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a98>:
+    FloatLayout:
+        Button:
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.transition = FadeTransition()
+            on_release: root.manager.current = "a108"
+            on_release: root.manager.transition = FadeTransition()
+        Image:
+            source: 'images/genshinnightstarbg1.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nWe're here. Let's find a good spot to lay down on. "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a108>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a109"
+        Image:
+            source: 'images/genshinnightstarbg2.png'
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            allow_stretch: True
+            keep_ratio: False
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nBeautiful, isn't it?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Yeah, it really is. "
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+<a109>:
+    Button:
+        text: "etst34 yes so fueuatl"
+
+<a149>:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <blackscreen>:
