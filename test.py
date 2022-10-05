@@ -861,9 +861,37 @@ class a148(Screen):
 class a149(Screen):
     pass
 class a150(Screen):
-    pass
+    def afficheckyes(self):
+        global affinity
+        if affinity >= 76:
+            self.manager.transition = FadeTransition()
+            self.manager.current = "a151"
+            print(affinity)
+            self.manager.transition = FadeTransition()
+        if affinity >= 50:
+            self.manager.current = "a152"
+            print(affinity)
+        else:
+            self.manager.current = "a153"
+            print(affinity)
+
+
 class a151(Screen):
-    pass
+    def goblack(self, *args):
+        Clock.schedule_once(self.next3, .0001)
+        Clock.schedule_once(self.next5, 2)
+        Clock.schedule_once(self.next6, 2.5)
+
+
+    def next3(self, dt):
+        self.manager.current = "a154"
+
+    def next5(self, dt):
+        self.manager.current = "blackscreen"
+
+    def next6(self, dt):
+        self.manager.current = "a155"
+
 class a152(Screen):
     pass
 class a153(Screen):
