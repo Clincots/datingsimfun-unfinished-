@@ -156,7 +156,7 @@
 <FirstScreen>:
     canvas:
         #Color:
-        #    rgb: (255/255, 170/255, 235/255)
+            #    rgb: (255/255, 170/255, 235/255)
         Rectangle:
             pos: self.pos
             size: self.size
@@ -349,7 +349,7 @@
         Button: #left
             pos_hint: {"x": 0.09, "y": 0.01}
             size_hint: .35, .1
-            on_release: root.manager.current = "a77"
+            on_release: root.manager.current = "a98"   #"a77" for start of cafe, "fourth" for intended
 
         Image:
             source: 'images/genshinbg1.jpg'
@@ -5052,17 +5052,18 @@
 
 <a78>:
     FloatLayout:
-
         Button: #left
             pos_hint: {"x": 0.033, "y": 0.01}
             size_hint: .3, .08
             on_release: app.minus3affinity()
             on_release: root.manager.current = "a83"
+
         Button: #middlemaybe
             pos_hint: {"x": 0.35, "y": 0.01}
             size_hint: .3, .08
             on_release: app.plus10affinity()
             on_release: root.manager.current = "a83"
+
         Button: #right
             pos_hint: {"x": 0.667, "y": 0.01}
             size_hint: .3, .08
@@ -5088,6 +5089,7 @@
                 center: self.parent.center
                 color: 255/255, 230/255, 140/205, 1
                 font_name: 'Micross'
+
         Image:
             source: 'images/responsebox.png'
             pos_hint: {"x": 0.033, "y": 0.01}
@@ -5100,6 +5102,7 @@
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
+
         Image:
             source: 'images/responsebox.png'
             pos_hint: {"x": 0.35, "y": 0.01}
@@ -5112,6 +5115,7 @@
                 center: self.parent.center
                 color: 0, 0, 0, 1
                 font_name: 'Micross'
+
         Image:
             source: 'images/responsebox.png'
             pos_hint: {"x": 0.667, "y": 0.01}
@@ -5131,6 +5135,7 @@
             pos_hint: {"x": -0.4, "y": -0.29}
             color: 189/255, 183/255, 107/255, 1
             font_name: 'Micross'
+
 <a79>:
     FloatLayout:
         Button: #left
@@ -7973,11 +7978,12 @@
             size_hint: .35, .1
             on_release: root.manager.current = "a109"
         Image:
-            source: 'images/genshinnightstarbg2.png'
             size_hint: 1,0.8
             pos_hint: {"x": 0, "y": 0.2}
+            source: 'images/genshinnightstarbg2.png'
             allow_stretch: True
             keep_ratio: False
+            anim_delay: 0.05
 
         Image:
             source: 'images/textbox.png'
@@ -8012,17 +8018,213 @@
                 font_name: 'Micross'
 
 <a109>:
-    Button:
-        text: "etst34 yes so fueuatl"
+    FloatLayout:
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.manager.current = "a149"
+        Image:
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            source: 'images/genshinnightstarbg2.png'
+            allow_stretch: True
+            keep_ratio: False
+            anim_delay: 0.05
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\n\n\nThis is one of my favorite places to visit at night. I sometimes like to just lay down here\nand just not think about anything - just relaxing, enjoying the scenary. It really takes \nmy mind off of any worries I have. "
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
 
 <a149>:
+    FloatLayout:
+        Button: #right
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.manager.current = "a150"
+            on_release: app.minus3affinity()
+        Button: #left
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .1
+            on_release: app.plus10affinity()
+            on_release: root.manager.current = "a150"
+        Image:
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            source: 'images/genshinnightstarbg2.png'
+            allow_stretch: True
+            keep_ratio: False
+            anim_delay: 0.05
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nDid you enjoy today, Anon?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.09, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Yeah, I had a good time."
+                font_sze: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.59, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "It was okay."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
 
 
 
+<a150>:
+    FloatLayout:
+        Button:
+            text: "Go to third"
+            pos_hint: {"x": 0, "y": 0}
+            size_hint: 1, .2
+            on_release: root.afficheckyes()
+        Image:
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            source: 'images/genshinnightstarbg2.png'
+            allow_stretch: True
+            keep_ratio: False
+            anim_delay: 0.05
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nThat's good to hear... it's getting really late now. Thank you for today, Anon."
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+
+<a151>:
+    FloatLayout:
+        Button: #middle
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .1
+            on_release: root.goblack()
+        Image:
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            source: 'images/genshinnightstarbg2.png'
+            allow_stretch: True
+            keep_ratio: False
+            anim_delay: 0.05
+
+        Image:
+            source: 'images/textbox.png'
+            pos_hint: {"x": -.1, "y": -.1}
+            size_hint: 1.25, .55
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "\nA-actually, wait. Let's just... stay here for a little longer, okay?"
+                font_size: 20
+                center: self.parent.center
+                color: 255/255, 230/255, 140/205, 1
+                font_name: 'Micross'
+        Label:
+            text: "Enimul"
+            bold: True
+            font_size: 20
+            pos_hint: {"x": -0.4, "y": -0.29}
+            color: 189/255, 183/255, 107/255, 1
+            font_name: 'Micross'
+        Image:
+            source: 'images/responsebox.png'
+            pos_hint: {"x": 0.34, "y": 0.01}
+            size_hint: .35, .08
+            allow_stretch: True
+            keep_ratio: False
+            Label:
+                text: "Okay."
+                font_size: 15
+                center: self.parent.center
+                color: 0, 0, 0, 1
+                font_name: 'Micross'
+
+
+<a152>:
 
 
 
+<a153>:
 
+<a154>:
+    FloatLayout:
+        Image:
+            size_hint: 1,0.8
+            pos_hint: {"x": 0, "y": 0.2}
+            source: 'images/genshinnightstarbg2.png'
+            allow_stretch: True
+            keep_ratio: False
+            anim_delay: 0.05
+<a155>:
+    Button:
+        on_release: app.Crash()
+        background_color: 0, 0, 0, 1
+    Label:
+        pos_hint: {"x": -0.0, "top": 1.05}
+        background_color: 1, 0, 0, 1
+        text: "Ending #1 (Good)"
+        font_size: 25
+        bold: True
+        color: 200/255, 0/255, 70/255, 1
 
 
 
